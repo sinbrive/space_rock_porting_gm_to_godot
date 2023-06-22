@@ -12,8 +12,6 @@ func _ready():
 			
 func _physics_process(delta):
 
-#	print(get_parent().get_node("Player").get_position().y)
-
 	if Input.is_action_pressed("move_up"):
 		# move forward on the object direction 
 		# well explained here : https://kidscancode.org/godot_recipes/3.x/math/transforms/index.html
@@ -23,7 +21,7 @@ func _physics_process(delta):
 		rotation_degrees += 4
 	if Input.is_action_pressed("move_right"):
 		rotation_degrees -= 4
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot"): # only one shot if maintained
 		_create_bullet()
 		
 	_wrap_it()
