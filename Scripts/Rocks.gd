@@ -27,9 +27,6 @@ func _physics_process(delta):
 			var body = collision.collider
 			body.queue_free()
 			
-#			if is_instance_valid(get_parent().get_node("Player")): 
-#				get_parent().get_node("Player").canFire=true
-			
 			if not self.is_in_group("small_rock"):
 				$Sprite.texture = load("res://Assets/spr_rock_small.png")
 				add_to_group("small_rock")
