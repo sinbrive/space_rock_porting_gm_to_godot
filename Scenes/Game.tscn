@@ -12,12 +12,18 @@ margin_right = 1000.0
 margin_bottom = 1000.0
 color = Color( 0, 0, 0, 1 )
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 497, 413 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 24.0
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 497, 413 )
 
 [node name="Rocks0" parent="." instance=ExtResource( 2 )]
 position = Vector2( 856, 317 )
@@ -36,11 +42,5 @@ position = Vector2( 131, 246 )
 
 [node name="Rocks6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 566, 104 )
-
-[node name="Score" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 50.0
-margin_bottom = 24.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
